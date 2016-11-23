@@ -1,3 +1,4 @@
 report.pages
 report.pdf
 matlab.mat
+*.m~
