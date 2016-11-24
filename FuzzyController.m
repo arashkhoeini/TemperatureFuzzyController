@@ -23,8 +23,8 @@ fan_medium = [zeros(1,400) l r zeros(1,200)];
 fan_very_high = [zeros(1,800) l];
 
 %Defining Rules
-rules = [fan_low fan_low fan_medium fan_medium fan_medium ;
-   fan_low fan_very_low fan_medium fan_medium fan_medium ; 
+rules = [fan_very_low fan_very_low fan_medium fan_medium fan_medium ;
+   fan_very_low fan_very_low fan_medium fan_medium fan_medium ; 
    fan_medium fan_medium fan_medium fan_medium fan_medium; 
    fan_very_high fan_very_high fan_high fan_high fan_high ;
    fan_very_high fan_very_high fan_high fan_high fan_high];
@@ -65,4 +65,11 @@ for i=1:5
         end
     end
 end
-plot(max(output))
+final_result = max(output)
+total_sum = 0
+for c=1:length(final_result)
+    total_sum = total_sum + c*final_result(c)
+end
+plot(final_result)
+total_sum / sum(final_result)
+
